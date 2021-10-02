@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Form, FormControl, Nav, Navbar, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
@@ -14,13 +15,13 @@ const NavBar = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link className="fs-4 text-white">Home</Nav.Link>
-                            <Nav.Link className="fs-4 text-white">Order</Nav.Link>
-                            <Nav.Link className="fs-4 text-white">Resturents</Nav.Link>
-                            <Nav.Link className="fs-4 text-white">Policy</Nav.Link>
-                            <Nav.Link className="fs-4 text-white">About</Nav.Link>
-
+                            <NavLink to="/home" className="fs-4 text-white pe-3 text-decoration-none menuItem">Home</NavLink>
+                            <NavLink to="/order" className="fs-4 text-white pe-3 text-decoration-none menuItem">Order</NavLink>
+                            <NavLink to="/review" className="fs-4 text-white pe-3 text-decoration-none menuItem">Review Order</NavLink>
+                            <NavLink to="/restaurants" className="fs-4 text-white pe-3 text-decoration-none menuItem">Restaurants</NavLink>
+                            <NavLink to="/policy" className="fs-4 text-white text-decoration-none menuItem">Policy</NavLink>
                         </Nav>
+
                         <Form className="d-flex">
                             <FormControl
                                 type="search"
