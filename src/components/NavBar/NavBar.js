@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormControl, Nav, Navbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -11,7 +11,7 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="mx-auto my-2 my-lg-0"
+                            className="ms-auto my-2 my-lg-0"
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
@@ -21,16 +21,6 @@ const NavBar = () => {
                             <NavLink to="/restaurants" className="fs-4 text-white pe-3 text-decoration-none menuItem">Restaurants</NavLink>
                             <NavLink to="/policy" className="fs-4 text-white text-decoration-none menuItem">Policy</NavLink>
                         </Nav>
-
-                        <Form className="d-flex">
-                            <FormControl
-                                type="search"
-                                placeholder="Search"
-                                className="mr-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-light">Search</Button>
-                        </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
