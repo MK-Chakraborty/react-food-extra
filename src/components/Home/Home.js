@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 import Categories from '../Categories/Categories';
+import useCatagories from '../hooks/useCatagories';
 
 const Home = () => {
 
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-            .then(response => response.json())
-            .then(data => setCategories(data.categories))
-    }, [])
+    const [categories] = useCatagories();
 
     return (
         <Container>

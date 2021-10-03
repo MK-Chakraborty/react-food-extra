@@ -1,9 +1,16 @@
 import React from 'react';
 import { Card, Button, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 const Meal = (props) => {
     const { strMeal, strCategory, strArea, strMealThumb, idMeal } = props.meal
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push(`/meal/${idMeal}`)
+    }
+
     return (
         <Card style={{ width: '24rem', height: '45rem' }} className="my-5 bg-danger text-white">
             <Card.Img variant="top" src={strMealThumb} />
@@ -17,7 +24,7 @@ const Meal = (props) => {
             </Card.Body>
 
             <Card.Footer>
-                <Link to={`meal/${idMeal}`}><Button variant="info">Details</Button></Link>
+                <Button onClick={handleClick} variant="info">Details</Button>
             </Card.Footer>
             <Card.Footer>
                 <Button variant="info"><h1><i className="fas fa-cart-plus"></i></h1></Button>
